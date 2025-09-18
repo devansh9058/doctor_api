@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("doctor")
+@RequestMapping("/doctor")
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
-   @PostMapping("add")
+   @PostMapping("/add")
    public ResponseEntity<Doctor> addDoctor(@Valid @RequestBody Doctor doctor){
 
        doctorService.saveDoctor(doctor);

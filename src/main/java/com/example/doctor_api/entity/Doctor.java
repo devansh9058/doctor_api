@@ -1,9 +1,6 @@
 package com.example.doctor_api.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -13,8 +10,7 @@ import javax.annotation.processing.Generated;
 @Entity
 public class Doctor {
     @Id
-    @GeneratedValue(generator="doc_seq")
-    @SequenceGenerator(name="doc_seq", initialValue=101, allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int docid;
     @NotNull(message="name is required")
     @Size(min=3,message="name has been minimum three character")

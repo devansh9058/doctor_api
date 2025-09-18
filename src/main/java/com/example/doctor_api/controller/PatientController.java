@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("patient")
+@RequestMapping("/patient")
 public class PatientController {
     @Autowired
     private PatientService patientService;
-    @PostMapping("add")
+    @PostMapping("/add")
     public ResponseEntity<Patient> addPatient(@Valid @RequestBody  Patient patient){
         patientService.savePatient(patient);
 
